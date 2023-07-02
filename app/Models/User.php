@@ -32,5 +32,10 @@ class User extends Model
     {
         return $this->hasMany(Notification::class);
     }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'category_user')->withTimestamps();
+    }
 }
 

@@ -6,8 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 use App\Models\Service;
-use App\Models\User;
-
+use Carbon\Carbon;
 class ServicesTableSeeder extends Seeder
 {
     /**
@@ -15,24 +14,29 @@ class ServicesTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::where('email', 'john@example.com')->first(); // Assuming user with ID 1 is the seller of these services
+        $services = [
+            [
+                'user_id' => 1,
+                'service_title' => 'Service 1',
+                'service_description' => 'This is service 1 description',
+                'service_price' => 10.99,
+                'service_category' => 1,
+                'delivery_time' => Carbon::now()->addDays(3),
+                'service_status' => 'active',
+            ],
+            [
+                'user_id' => 2,
+                'service_title' => 'Service 2',
+                'service_description' => 'This is service 2 description',
+                'service_price' => 15.99,
+                'service_category' => 2,
+                'delivery_time' => Carbon::now()->addDays(5),
+                'service_status' => 'active',
+            ],
+        ];
 
-        $user->services()->create([
-            'service_title' => 'Logo Design',
-            'service_description' => 'I will design a professional logo for your business.',
-            'service_price' => 50,
-            'service_category' => 'Graphic Design',
-            'delivery_time' => 3,
-            'service_status' => 'active',
-        ]);
-
-        $user->services()->create([
-            'service_title' => 'Website Development',
-            'service_description' => 'I will create a responsive website using modern technologies.',
-            'service_price' => 200,
-            'service_category' => 'Web Development',
-            'delivery_time' => 7,
-            'service_status' => 'active',
-        ]);
+        foreach ($services as $service) {
+            Service::create($service);
+        }
     }
 }

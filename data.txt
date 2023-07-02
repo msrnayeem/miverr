@@ -77,3 +77,66 @@ $user = $review->user;
 $userName = $user->name;
 $userEmail = $user->email;
 // ...
+
+
+//category to sub to sub-sub by category id
+$category = Category::find($categoryId);
+
+if ($category) {
+    // Retrieve subcategories for the category
+    $subCategories = $category->subCategories;
+
+    // Retrieve sub-subcategories for each subcategory
+    foreach ($subCategories as $subCategory) {
+        $subSubCategories = $subCategory->subSubCategories;
+        // Do something with the sub-subcategories
+    }
+}
+
+//from sub-sub to category by subsub category id
+$subSubCategory = SubSubCategory::find($subSubCategoryId);
+
+if ($subSubCategory) {
+    $subCategory = $subSubCategory->subCategory;
+
+    if ($subCategory) {
+        $category = $subCategory->category;
+
+        if ($category) {
+            // Access the category
+            $categoryId = $category->id;
+            $categoryName = $category->name;
+
+            // Do something with the category
+        }
+    }
+}
+
+
+//user to category
+$user = User::find($userId);
+
+if ($user) {
+    $categories = $user->categories;
+    // Do something with the categories
+}
+
+$category = Category::find($categoryId);
+
+if ($category) {
+    $users = $category->users;
+    // Do something with the users
+}
+
+//in view
+<h2>{{ $category->name }}</h2>
+    <ul>
+        @foreach ($category->subCategories as $subCategory)
+            <li>{{ $subCategory->name }}</li>
+            <ul>
+                @foreach ($subCategory->subSubCategories as $subSubCategory)
+                    <li>{{ $subSubCategory->name }}</li>
+                @endforeach
+            </ul>
+        @endforeach
+    </ul>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,12 +17,13 @@ return new class extends Migration
             $table->string('service_title');
             $table->text('service_description');
             $table->decimal('service_price', 8, 2);
-            $table->string('service_category');
-            $table->integer('delivery_time');
+            $table->unsignedBigInteger('service_category');
+            $table->datetime('delivery_time');
             $table->string('service_status');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('service_category')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
@@ -33,4 +34,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('services');
     }
-};
+}
