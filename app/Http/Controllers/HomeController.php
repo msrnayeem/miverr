@@ -11,10 +11,7 @@ class HomeController extends Controller
     {
         return view('pages.index');
     }
-    public function indexx()
-    {
-        return view('landing');
-    }
+    
 
 
     public function getCategories()

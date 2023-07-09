@@ -21,7 +21,7 @@
     .main-cat-list>li {
     height: 60px;
     
-    
+   
     color: #303030;
     white-space: nowrap;
     position: relative;
@@ -113,20 +113,26 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    
     }
 
     .main-cat-list>li .menu-cont li a:hover {
     text-decoration: underline;
+   
     }
 
     .main-cat-list>li a {
     font-weight: 400;
     color: #555555;
+    text-decoration: none;
+    
     }
 
     .main-cat-list>li a:hover {
     text-decoration: none;
+    
     }
+
 
     .main-cat-list>li:hover {
     border: 1px #dddddd solid;

@@ -1,18 +1,16 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#fafafa">
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-    
+   
+ 
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('./public/assets/css/nav.css')); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('./public/assets/css/landing.css')); ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <title><?php echo $__env->yieldContent('title'); ?></title>
     
-    <?php echo $__env->yieldPushContent('styles'); ?>
-    <link rel="stylesheet" href="<?php echo e(asset('asscss/app.css')); ?>">
+   
+    
 </head>
 <body>
 
@@ -465,4 +463,4 @@
     <?php echo $__env->yieldPushContent('scripts'); ?>
 </body>
 </html>
-<?php /**PATH C:\xampp\htdocs\Miverr\resources\views/layouts/master.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\miverr\resources\views/layouts/master.blade.php ENDPATH**/ ?>

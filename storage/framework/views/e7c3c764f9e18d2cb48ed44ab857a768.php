@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Miverr - Home'); ?>
 
 
@@ -12,4 +10,4 @@
     <script src="<?php echo e(asset('')); ?>"></script>
 <?php $__env->stopPush(); ?>
 
-<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\Miverr\resources\views/pages/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\miverr\resources\views/pages/index.blade.php ENDPATH**/ ?>
