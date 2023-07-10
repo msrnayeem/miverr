@@ -52,7 +52,7 @@
           <div class="right">
             <nav class="header-right-menu">
               <ul>
-                <li><a class="active" href="#">Miverr Pro</a></li>
+                <li><a class="active" href="{{ route('categories') }}">Categories</a></li>
                 <li><a href="#"><i class="fas fa-flag-usa"></i>English</a></li>
                 <li><a href="#">Become a Seller</a></li>
                 <li><a href="#">Sing In</a></li>
@@ -296,26 +296,17 @@
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
   
+ 
   <script>
-        
+  if (window.location.href !== "http://localhost/miverr/") {
   var headerSearch = document.getElementById('header-search');
   var headerBottomMenu = document.querySelector('.header-bottom-menu');
-  var sliderSection = document.querySelector('.slider');
-  var sliderSectionHeight = sliderSection.offsetHeight;
-  var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-  window.addEventListener('scroll', function() {
-    scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollPosition > sliderSectionHeight * 0.5) {
-        headerBottomMenu.classList.add('show');
-        headerSearch.classList.add('show');
-      } else {
-        headerBottomMenu.classList.remove('show');
-        headerSearch.classList.remove('show');
-      }
-   
-  });
-  </script>
+  headerBottomMenu.classList.add('show');
+  headerSearch.classList.add('show');
+}
+
+</script>
 
  
 </body>

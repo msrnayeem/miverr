@@ -428,6 +428,26 @@
       </div>
     </div>
   </section>
+  <script>
+        
+        var headerSearch = document.getElementById('header-search');
+        var headerBottomMenu = document.querySelector('.header-bottom-menu');
+        var sliderSection = document.querySelector('.slider');
+        var sliderSectionHeight = sliderSection.offsetHeight;
+        var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      
+        window.addEventListener('scroll', function() {
+          scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollPosition > sliderSectionHeight * 0.5) {
+              headerBottomMenu.classList.add('show');
+              headerSearch.classList.add('show');
+            } else {
+              headerBottomMenu.classList.remove('show');
+              headerSearch.classList.remove('show');
+            }
+         
+        });
+        </script>
 @endsection
 
 @push('scripts')
